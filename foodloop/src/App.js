@@ -1,26 +1,19 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Container, Card, CardContent } from '@mui/material';
+import React from "react";
+import { Container, Box, CssBaseline, Typography } from "@mui/material";
+import Navbar from "./components/Navbar";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
-    <Container>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6">My MUI App</Typography>
-          <Button color="inherit" style={{ marginLeft: 'auto' }}>Login</Button>
-        </Toolbar>
-      </AppBar>
-
-      <Card style={{ marginTop: '20px' }}>
-        <CardContent>
-          <Typography variant="h5" component="div">
-            Welcome to My App
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            This is a simple user interface built with Material-UI.
-          </Typography>
-        </CardContent>
-      </Card>
+    <Container maxWidth="lg">
+      <CssBaseline />
+      <Navbar />
+      <Box my={4}>
+        <Typography variant="h4" align="center" color="textPrimary">
+          Welcome, User!
+        </Typography>
+        <Dashboard />
+      </Box>
     </Container>
   );
 }
