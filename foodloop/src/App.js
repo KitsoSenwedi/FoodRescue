@@ -1,20 +1,24 @@
 import React from "react";
-import { Container, Box, CssBaseline, Typography } from "@mui/material";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Container, CssBaseline } from "@mui/material";
 import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
+import ScheduleDonation from "./components/ScheduleDonation";
+import ImpactDashboard from "./components/ImpactDashboard";
 
 function App() {
   return (
-    <Container maxWidth="lg">
-      <CssBaseline />
-      <Navbar />
-      <Box my={4}>
-        <Typography variant="h4" align="center" color="textPrimary">
-          Welcome, User!
-        </Typography>
-        <Dashboard />
-      </Box>
-    </Container>
+    <Router>
+      <Container maxWidth="lg">
+        <CssBaseline />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/schedule" element={<ScheduleDonation />} />
+          <Route path="/impact" element={<ImpactDashboard />} />
+        </Routes>
+      </Container>
+    </Router>
   );
 }
 
